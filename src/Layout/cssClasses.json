@@ -1,0 +1,18 @@
+{
+  "light": {
+    "colorPrimary": "light-primary-color bg-transition",
+    "colorSecondary": "light-secondary-color bg-transition",
+    "colorTertiary": "light-tertiary-color bg-transition",
+    "bgColor": "light-bg-color bg-transition",
+    "textPrimaryColor": "light-primary-font-color font-transition",
+    "textSecondaryColor": "light-secondary-font-color font-transition"
+  },
+  "dark": {
+    "colorPrimary": "dark-primary-color bg-transition",
+    "colorSecondary": "dark-secondary-color bg-transition",
+    "colorTertiary": "dark-tertiary-color bg-transition",
+    "bgColor": "dark-bg-color bg-transition",
+    "textPrimaryColor": "dark-primary-font-color font-transition",
+    "textSecondaryColor": "dark-secondary-font-color font-transition"
+  }
+}

@@ -1,0 +1,111 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+}
+header {
+  height: 9%;
+}
+nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+}
+footer {
+  display: flex;
+  height: 6%;
+  width: 100%;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70%;
+  width: 100%;
+  padding: 0 40px 0 40px;
+}
+.nav-rightend {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.profile-pic {
+  height: 35px;
+  width: 35px;
+  border-radius: 5px;
+  margin-right: 10px;
+  background-size: contain;
+  background-position: center;
+}
+
+
+/* LAYOUT PRESET CLASSES */
+
+
+/* dark-light classes */
+.light-primary-color {
+  background-color: #ecf0f1;
+}
+.dark-primary-color {
+  background-color: #303030;
+}
+.light-secondary-color {
+  background-color: #2c3e50;
+}
+.dark-secondary-color {
+  background-color: #3c8891;
+}
+.light-tertiary-color {
+  background-color: #3c8891;
+}
+.dark-tertiary-color {
+  background-color: #2c3e50;
+}
+.light-bg-color {
+  background-color: #ffffff;
+}
+.dark-bg-color {
+  background-color: #222;
+}
+.light-primary-font-color {
+  color: #000000;
+}
+.light-secondary-font-color {
+  color: #ffffff;
+}
+.dark-primary-font-color {
+  color: #ffffff;
+}
+.dark-secondary-font-color {
+  color: #000000;
+}
+.bg-transition {
+  transition: background-color 1000ms ease-in-out;
+}
+.font-transition {
+  transition: color 1000ms ease-in-out;
+}
+
+/* GENERAL CLASSES */
+.btn {
+  display: flex;
+  border: none;
+  border-radius: 5px;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+.btn:hover {
+  background-color: #ffffff83;
+}
+.btn svg {
+  margin-right: 5px;
+}

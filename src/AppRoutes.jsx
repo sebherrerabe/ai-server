@@ -1,30 +1,22 @@
-import { Routes ,Route  , BrowserRouter as Router  ,Link} from "react-router-dom";
+
+import { createContext, useState } from "react";
+import { Routes, Route, Navigate } from "react-router";
 import Layout from "./Layout/Layout";
-import Login from "./pages/Login";
+import Content from "./Layout/components/Content";
+
+export const LogInContext = createContext()
 
 
 const AppRoutes = () => {
+  const [isLoggedIn, setisLoggedIn] = useState(true);
   return (
-    <Router>
-        <nav>
-          <ul>
-            <li> 
-              <Link to="/">Home </Link>
-            </li>
-            <li> 
-              <Link to="/login">Login </Link>
-            </li>
-            <li> 
-              <Link to="/dashboard">Dashboard </Link>
-            </li>
-          </ul>
-        </nav>
-    <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-    </Routes>
-    </Router>
+    <LogInContext.Provider value={isLoggedIn}>
+      <Routes>
+        <Route index element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Navigate replace to="/login" />} />
+        <Route path="login" element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Layout> <Content /> </Layout>} />
+        <Route path="dashboard" element={!isLoggedIn ? <Navigate replace to="/login" /> : <Layout> <Content /> </Layout>} />
+      </Routes>
+    </LogInContext.Provider>
   );
 }
 
