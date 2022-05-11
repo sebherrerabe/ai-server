@@ -1,12 +1,15 @@
 import Header from "./components/Header";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
-import { createContext, useState } from "react";
+
+import { createContext, useState, useContext } from "react";
+
 import cssClasses from "./cssClasses.json"
 
 export const ThemeContext = createContext();
 
-const Layout = () => {
+const Layout = (props) => {
+
     const light = cssClasses.light;
     const dark = cssClasses.dark;
 
@@ -35,9 +38,9 @@ const Layout = () => {
 
     return (
         <ThemeContext.Provider value={themeColors}>
-            <div className={"main-container " + themeColors.bgColor }>
+            <div className={"main-container " + themeColors.bgColor}>
                 <Header />
-                <Content />
+                {props.children}
                 <Footer />
             </div>
         </ThemeContext.Provider>
