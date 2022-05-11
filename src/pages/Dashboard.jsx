@@ -1,9 +1,21 @@
-import React from "react";
+import Layout from "../layout/Layout";
+import Button from "../compononets/Button";
+import Input from "../compononets/Input";
 
-export default function Dashboard() {
+const  Dashboard = () => {
+    const buttons = [{name:"Launcher"}, {name:"Queue"}, {name:"Past Trainings"}]
     return (
-        <>
-        <h1>Dashboard Page</h1>
-        </>
+        <div>
+            {
+                buttons.map(button => {
+                    return <Button name = {button.name} /> 
+                }) 
+            }     
+            <Input />       
+        </div>
+        
+    
     )
 }
+
+export default Dashboard;

@@ -1,8 +1,7 @@
-import React from 'react'
 import { Routes ,Route  , BrowserRouter as Router  ,Link} from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+
 
 const AppRoutes = () => {
   return (
