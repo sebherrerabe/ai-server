@@ -1,4 +1,4 @@
-
+import AiLogo from '../assets/img/logo-becode.png'
 
 const Layout = () => {
     return (
