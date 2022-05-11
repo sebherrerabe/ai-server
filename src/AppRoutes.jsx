@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router";
-import Layout from "./Layout/Layout";
+import Layout from "./layout/Layout";
 
 const AppRoutes = () => {
   return (

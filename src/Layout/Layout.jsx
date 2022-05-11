@@ -1,9 +1,10 @@
 import AiLogo from '../assets/img/logo-becode.png'
+import Dashboard from '../pages/Dashboard';
 
 const Layout = () => {
     return (
         <>
-            <h1>Hello world!</h1>
+            <Dashboard />
         </>
     )
 }
