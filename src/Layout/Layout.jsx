@@ -36,6 +36,7 @@ const Layout = (props) => {
         })
     }
 
+
     return (
         <ThemeContext.Provider value={themeColors}>
             <div className={"main-container " + themeColors.bgColor}>
@@ -44,6 +45,7 @@ const Layout = (props) => {
                 <Footer />
             </div>
         </ThemeContext.Provider>
+
     )
 }
 
