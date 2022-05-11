@@ -1,11 +1,31 @@
-import { Routes, Route } from "react-router";
+import React from 'react'
+import { Routes ,Route  , BrowserRouter as Router  ,Link} from "react-router-dom";
 import Layout from "./Layout/Layout";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 const AppRoutes = () => {
   return (
+    <Router>
+        <nav>
+          <ul>
+            <li> 
+              <Link to="/">Home </Link>
+            </li>
+            <li> 
+              <Link to="/login">Login </Link>
+            </li>
+            <li> 
+              <Link to="/dashboard">Dashboard </Link>
+            </li>
+          </ul>
+        </nav>
     <Routes>
-      <Route path="/" element={<Layout />} />
+        <Route path="/" element={<Layout />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
+    </Router>
   );
 }
 
