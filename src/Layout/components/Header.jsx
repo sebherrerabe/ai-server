@@ -1,13 +1,18 @@
-import { useContext } from "react";
+
 import { LogInContext } from "../../AppRoutes";
+
+import { useContext } from "react";
 import { ThemeContext } from "../Layout";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-import profPic from "../../assets/img/nerd.jpeg";
+import profPic from "../assets/img/nerd.jpeg";
 
 const Header = () => {
     const isLoggedIn = useContext(LogInContext);
+
     const themeColors = useContext(ThemeContext);
+
     return (
         <header>
             {isLoggedIn ? <nav className={themeColors.colorPrimary}>
