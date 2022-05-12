@@ -21,6 +21,9 @@ nav {
   align-items: center;
   height: 85%;
 }
+.nocolumn {
+  flex-direction: row;
+}
 footer {
   display: flex;
   height: 6%;
