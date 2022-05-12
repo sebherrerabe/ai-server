@@ -46,7 +46,7 @@ const Layout = ({ whatIs }) => {
         <ThemeContext.Provider value={themeColors}>
 
             <div className={"main-container " + themeColors.bgColor}>
-                <button className="magic-btn" onClick={() => {switchMode()}}> Dark mode</button>
+                {/* <button className="magic-btn" onClick={() => {switchMode()}}> Dark mode</button> */}
                 <Header />
                 <Switch switchMode={switchMode} />
                 {whatIs === "login" ? <Login /> : <Dashboard />}

@@ -37,7 +37,7 @@ const Login = () => {
       <div className="content">
         <div className="inner-content">
           <div className="login-left">
-            {/* <img src={logo} alt="logo" className="login-logo" /> */}
+            <img src={logo} alt="logo" className="login-logo" />
           </div>
           <div className="login-middle"></div>
           <div className="login-right">

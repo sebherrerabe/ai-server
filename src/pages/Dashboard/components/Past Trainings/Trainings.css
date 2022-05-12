@@ -6,7 +6,6 @@
     display: flex;
     justify-content: center;
     align-items: center;    
-    background-color: rgb(45, 160, 141);
 }
 
 .training-table {
@@ -31,5 +30,4 @@
     display: flex;
     justify-content: center;
     align-items: center;    
-    background-color: tomato;
 }
