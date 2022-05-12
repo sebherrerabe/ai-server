@@ -1,10 +1,11 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Switch from "./components/Switch";
 import Login from "../pages/Login/Login";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import './Layout.css';
 
-import { createContext, useState, useContext } from "react";
+import { createContext, useState } from "react";
 
 import cssClasses from "./cssClasses.json"
 
@@ -45,6 +46,7 @@ const Layout = ({ whatIs }) => {
         <ThemeContext.Provider value={themeColors}>
             <div className={"main-container " + themeColors.bgColor}>
                 <Header />
+                <Switch switchMode={switchMode} />
                 {whatIs === "login" ? <Login /> : <Dashboard />}
                 <Footer />
             </div>

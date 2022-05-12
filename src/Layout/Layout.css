@@ -62,6 +62,31 @@ footer {
 .footer-inner a {
   margin-left: 20px;
 }
+.switch {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 50px;
+  width: 90px;
+  border-radius: 5px 0 0 5px;
+}
+.switch-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  height: 100%;
+  width: 50%;
+  background-color: transparent;
+}
+
+.switch-btn-light-active {
+  background-color: whitesmoke;
+  border-radius: 5px 0 0 5px;
+  cursor: grab;
+}
+
 
 /* LAYOUT PRESET CLASSES */
 
@@ -99,6 +124,9 @@ footer {
 .light-tertiary-font-color {
   color: #2c3e50;
 }
+.light-quaternary-font-color {
+  color: #959595;
+}
 .dark-primary-font-color {
   color: #ffffff;
 }
@@ -107,6 +135,9 @@ footer {
 }
 .dark-tertiary-font-color {
   color: #ffffff;
+}
+.dark-quaternary-font-color {
+  color: whitesmoke;
 }
 .bg-transition {
   transition: background-color 1000ms ease-in-out;

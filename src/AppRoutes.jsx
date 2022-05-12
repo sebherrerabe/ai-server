@@ -1,22 +1,24 @@
 
-import { createContext, useState } from "react";
+import { createContext, useState} from "react";
 import { Routes, Route, Navigate } from "react-router";
 import { BrowserRouter } from 'react-router-dom';
 import Layout from "./Layout/Layout";
-import Login from "./pages/Login/Login";
-import Dashboard from "./pages/Dashboard/Dashboard";
 
 export const LogInContext = createContext()
 
 
 const AppRoutes = () => {
 
-  const [isLoggedIn, setisLoggedIn] = useState(false);
+
+  const [userSession, setUserSession] = useState({ isLoggedIn: false, userName: "", jwt: "" })
 
 
+  let isLoggedIn = userSession.isLoggedIn;
+
+  let forContext = { isLoggedIn: isLoggedIn, setUserSession: setUserSession };
 
   return (
-    <LogInContext.Provider value={isLoggedIn}>
+    <LogInContext.Provider value={forContext}>
       <BrowserRouter>
         <Routes>
           <Route index element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Navigate replace to="/login" />} />

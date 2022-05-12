@@ -1,13 +1,36 @@
+
 import logo from './assets/img/logo-becode.png'
 import './Login.css'
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "../../Layout/Layout";
+import { LogInContext } from "../../AppRoutes";
 
 const Login = () => {
 
   const themeColors = useContext(ThemeContext);
+  const forContext = useContext(LogInContext);
 
+  const [inputValues, setInputValues] = useState({ userName: "", password: "" });
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    fetch("http://api.ai-server.becode.org/api/auth", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify({
+        username: inputValues.userName,
+        password: inputValues.password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        forContext.setUserSession({ isLoggedIn: true, userName: inputValues.userName, jwt: data.jwt });
+      })
+  }
 
   return (
     <>
@@ -23,9 +46,9 @@ const Login = () => {
             </div>
             <div className="login-right-bottom">
               <form className="login-form"
-                action="dashboard">
-                <input className={"login-input " + themeColors.colorPrimary} type="text" placeholder="Username" />
-                <input className={"login-input " + themeColors.colorPrimary} type="password" placeholder="Password" />
+                action="dashboard" onSubmit={(e) => { handleLogin(e) }}>
+                <input className={"login-input " + themeColors.colorPrimary} type="text" placeholder="Username" onChange={(e) => { setInputValues({ ...inputValues, userName: e.target.value }) }} />
+                <input className={"login-input " + themeColors.colorPrimary} type="password" placeholder="Password" onChange={(e) => { setInputValues({ ...inputValues, password: e.target.value }) }} />
                 <br />
                 <div className="login-form-bottom">
                   <div className="login-form-bottom-left">
@@ -44,11 +67,5 @@ const Login = () => {
   )
 }
 
-{/* <h1 className="login-heading"> / LOGIN </h1>
-        
-        
-        <div className="login-container">
-          
-        </div> */}
 
 export default Login
