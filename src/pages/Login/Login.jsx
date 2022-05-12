@@ -14,7 +14,7 @@ const Login = () => {
       <div className="content">
         <div className="inner-content">
           <div className="login-left">
-            <img src={logo} alt="logo" className="login-logo" />
+            {/* <img src={logo} alt="logo" className="login-logo" /> */}
           </div>
           <div className="login-middle"></div>
           <div className="login-right">
@@ -29,7 +29,7 @@ const Login = () => {
                 <br />
                 <div className="login-form-bottom">
                   <div className="login-form-bottom-left">
-                    <input className="login-check-box" type="checkbox" />Remember me
+                    <input className={"login-check-box" + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}  type="checkbox" />Remember me
                   </div>
                   <div className="login-form-bottom-right">
                     <button className={"login-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="submit">Sign in</button>
@@ -44,11 +44,5 @@ const Login = () => {
   )
 }
 
-{/* <h1 className="login-heading"> / LOGIN </h1>
-        
-        
-        <div className="login-container">
-          
-        </div> */}
 
 export default Login

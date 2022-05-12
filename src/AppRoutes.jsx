@@ -1,7 +1,7 @@
 
 import { createContext, useState } from "react";
 import { Routes, Route, Navigate } from "react-router";
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter , Link } from 'react-router-dom';
 import Layout from "./Layout/Layout";
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -29,3 +29,6 @@ const AppRoutes = () => {
 }
 
 export default AppRoutes;
+
+
+
