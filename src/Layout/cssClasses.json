@@ -6,7 +6,8 @@
     "bgColor": "light-bg-color bg-transition",
     "textPrimaryColor": "light-primary-font-color font-transition",
     "textSecondaryColor": "light-secondary-font-color font-transition",
-    "textTertiaryColor": "light-tertiary-font-color font-transition"
+    "textTertiaryColor": "light-tertiary-font-color font-transition",    
+    "textQuaternaryColor": "light-quaternary-font-color font-transition"
     
   },
   "dark": {
