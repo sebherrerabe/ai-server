@@ -17,6 +17,8 @@ nav {
 .content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 85%;
 }
 footer {
@@ -46,9 +48,22 @@ footer {
   background-position: center;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+}
+.footer-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+.footer-inner a {
+  margin-left: 20px;
+}
 
 /* LAYOUT PRESET CLASSES */
-
 
 /* dark-light classes */
 .light-primary-color {
@@ -81,11 +96,17 @@ footer {
 .light-secondary-font-color {
   color: #ffffff;
 }
+.light-tertiary-font-color {
+  color: #2c3e50;
+}
 .dark-primary-font-color {
   color: #ffffff;
 }
 .dark-secondary-font-color {
   color: #000000;
+}
+.dark-tertiary-font-color {
+  color: #ffffff;
 }
 .bg-transition {
   transition: background-color 1000ms ease-in-out;
