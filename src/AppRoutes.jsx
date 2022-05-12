@@ -20,8 +20,8 @@ const AppRoutes = () => {
       <BrowserRouter>
         <Routes>
           <Route index element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Navigate replace to="/login" />} />
-          <Route path="login" element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Layout> <Login /> </Layout>} />
-          <Route path="dashboard" element={!isLoggedIn ? <Navigate replace to="/login" /> : <Layout> <Dashboard /> </Layout>} />
+          <Route path="login" element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Layout whatIs={"login"} />} />
+          <Route path="dashboard" element={!isLoggedIn ? <Navigate replace to="/login" /> : <Layout whatIs={"dashboard"} />} />
         </Routes>
       </BrowserRouter>
     </LogInContext.Provider>

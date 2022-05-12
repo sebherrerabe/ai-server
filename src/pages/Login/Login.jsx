@@ -8,27 +8,47 @@ const Login = () => {
 
   const themeColors = useContext(ThemeContext);
 
+
   return (
     <>
       <div className="content">
-        <h1 className="login-heading"> / LOGIN </h1>
-        <div className="login-container">
-
-          <img src={logo} alt="logo" className="login-logo" />
-          <form className="login-form"
-            action="dashboard">
-            <input className="login-input" type="text" placeholder="Username" />
-            <input className="login-input" type="password" placeholder="Password" />
-            <br />
-            <input className="login-check-box" type="checkbox" /> Remember me
-            <button className={"login-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="submit">Sign in</button>
-
-          </form>
+        <div className="inner-content">
+          <div className="login-left">
+            <img src={logo} alt="logo" className="login-logo" />
+          </div>
+          <div className="login-middle"></div>
+          <div className="login-right">
+            <div className="login-right-top">
+              <h1 className={"login-heading " + themeColors.textTertiaryColor}> / LOGIN </h1>
+            </div>
+            <div className="login-right-bottom">
+              <form className="login-form"
+                action="dashboard">
+                <input className={"login-input " + themeColors.colorPrimary} type="text" placeholder="Username" />
+                <input className={"login-input " + themeColors.colorPrimary} type="password" placeholder="Password" />
+                <br />
+                <div className="login-form-bottom">
+                  <div className="login-form-bottom-left">
+                    <input className="login-check-box" type="checkbox" />Remember me
+                  </div>
+                  <div className="login-form-bottom-right">
+                    <button className={"login-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="submit">Sign in</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </>
   )
 }
 
+{/* <h1 className="login-heading"> / LOGIN </h1>
+        
+        
+        <div className="login-container">
+          
+        </div> */}
 
 export default Login
