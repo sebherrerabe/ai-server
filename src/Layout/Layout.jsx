@@ -1,6 +1,6 @@
 import Header from "./components/Header";
-import Content from "./components/Content";
 import Footer from "./components/Footer";
+import './Layout.css';
 
 import { createContext, useState, useContext } from "react";
 
@@ -40,6 +40,7 @@ const Layout = (props) => {
     return (
         <ThemeContext.Provider value={themeColors}>
             <div className={"main-container " + themeColors.bgColor}>
+                <button onClick={() => { switchMode() }}>Test</button>
                 <Header />
                 {props.children}
                 <Footer />
