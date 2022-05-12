@@ -11,7 +11,7 @@ export const LogInContext = createContext()
 
 const AppRoutes = () => {
 
-  const [isLoggedIn, setisLoggedIn] = useState(false);
+  const [isLoggedIn, setisLoggedIn] = useState(true);
 
 
 
