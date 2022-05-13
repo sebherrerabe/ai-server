@@ -71,7 +71,7 @@ const Queue = () => {
   }
   useEffect(() => {
     getQueue()
-  },[])
+  }, [])
 
 
   return (
@@ -79,31 +79,31 @@ const Queue = () => {
       {canDisplay ?
         <div className="component-container">
           <div className={"training-number  " + themeColors.textTertiaryColor}>You have 0 training in queue</div>
-      <div className="training-table">
-        <table>
-          <thead>
-            <tr>
-              <th className={"container-details  " + themeColors.textTertiaryColor}>The docker image name</th>
-              <th className={"status  " + themeColors.textTertiaryColor}>The position of the training in the queue.</th>
-              <th className={"artifacts  " + themeColors.textTertiaryColor}>The docker volume.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className={"details  "+ themeColors.textTertiaryColor}></td>
-              <td className={"done  " + themeColors.textTertiaryColor}></td>
-              <td className={"download  " + themeColors.textTertiaryColor}></td>
-            </tr>
-            <tr>
-              <td className={"details  "+ themeColors.textTertiaryColor}></td>
-              <td className={"done  " + themeColors.textTertiaryColor}></td>
-              <td className={"download  " + themeColors.textTertiaryColor}></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-            <div className="refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>
+          <div className="training-table">
+            <table>
+              <thead>
+                <tr>
+                  <th className={"container-details  " + themeColors.textTertiaryColor}>The docker image name</th>
+                  <th className={"status  " + themeColors.textTertiaryColor}>The position of the training in the queue.</th>
+                  <th className={"artifacts  " + themeColors.textTertiaryColor}>The docker volume.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className={"details  " + themeColors.textTertiaryColor}></td>
+                  <td className={"done  " + themeColors.textTertiaryColor}></td>
+                  <td className={"download  " + themeColors.textTertiaryColor}></td>
+                </tr>
+                <tr>
+                  <td className={"details  " + themeColors.textTertiaryColor}></td>
+                  <td className={"done  " + themeColors.textTertiaryColor}></td>
+                  <td className={"download  " + themeColors.textTertiaryColor}></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <div className="refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>
+        </div>
         : <img src={lightLoading} alt="wait to load" />}
     </>
   );
