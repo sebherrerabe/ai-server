@@ -7,8 +7,8 @@ import './Launcher.css'
 import lightLoading from "../../assets/loading/light-loading.svg";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFolderTree} from '@fortawesome/free-solid-svg-icons'
-import { faDocker} from '@fortawesome/free-brands-svg-icons'
+import { faFolderTree } from '@fortawesome/free-solid-svg-icons'
+import { faDocker } from '@fortawesome/free-brands-svg-icons'
 
 
 
