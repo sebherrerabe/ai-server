@@ -18,24 +18,25 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    fetch("http://api.ai-server.becode.org/api/auth", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify({
-        username: inputValues.userName,
-        password: inputValues.password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        forContext.setUserSession({ isLoggedIn: true, userName: inputValues.userName, jwt: data.jwt });
-      })
-      .catch((err) => {
-        forContext.setUserSession({ isLoggedIn: true, userName: "blabla", jwt: "data.jwt" });
-      });
+    // fetch("http://api.ai-server.becode.org/api/auth", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Accept": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     username: inputValues.userName,
+    //     password: inputValues.password,
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     forContext.setUserSession({ isLoggedIn: true, userName: inputValues.userName, jwt: data.jwt });
+    //   })
+    //   .catch((err) => {
+    //     forContext.setUserSession({ isLoggedIn: true, userName: "blabla", jwt: "data.jwt" });
+    //   });
+    forContext.setUserSession({ isLoggedIn: true, userName: "blabla", jwt: "data.jwt" });
   }
 
   return (
