@@ -5,7 +5,9 @@ import './Launcher.css'
 import lightLoading from "../../assets/loading/light-loading.svg";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faFolderTree} from '@fortawesome/free-solid-svg-icons'
+import { faDocker} from '@fortawesome/free-brands-svg-icons'
+
 
 
 const Launcher = () => {
@@ -38,10 +40,10 @@ const Launcher = () => {
             {canDisplay ? <div className="component-container">
                 <div className="display-input">
                     <form className="launcher-form" action="">
-                        <label htmlFor="img-slug " className="mg-bt-5"><FontAwesomeIcon icon={faRightFromBracket} />Image Slug </label>
-                        <input name="img-slug" className={"launcher-input " + themeColors.colorPrimary} type="text" placeholder="DockerHub_username/image_name" />
-                        <label htmlFor="output" className="mg-bt-5"><FontAwesomeIcon icon={faRightFromBracket} />Volume</label>
-                        <input name="output" className={"launcher-input " + themeColors.colorPrimary} type="password" placeholder="/output" />
+                        <label htmlFor="img-slug" className={"mg-bt-5  " + themeColors.textTertiaryColor}><FontAwesomeIcon icon={faDocker} className="icons"/>Image Slug </label>
+                        <input name="img-slug" className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="arungupta/print-hello" />
+                        <label htmlFor="output" className={"mg-bt-5  " + themeColors.textTertiaryColor}><FontAwesomeIcon icon={faFolderTree} className="icons"/>Volume</label>
+                        <input name="output" className={"launcher-input  " + themeColors.colorQuartenary} type="password" placeholder="/output" />
                         <br />
                         <div className="display-btn">
                             <button className={"queue-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="submit">Send to queue</button>
