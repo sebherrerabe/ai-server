@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./Dashboard.css";
+
 import profPic from "../../Layout/assets/img/nerd.jpeg";
-import lightLoading from "./assets/loading/light-loading.svg";
 
 import { ThemeContext } from "../../Layout/Layout";
 

@@ -105,9 +105,22 @@
 }
 
 .display-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
 }
+
+.display-message {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
 .icon-square {
     height: 30px;
     width: 30px;

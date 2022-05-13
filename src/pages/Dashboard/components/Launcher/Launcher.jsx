@@ -1,5 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, createRef } from "react";
 import { ThemeContext } from "../../../../Layout/Layout";
+
+import { LogInContext } from "../../../../AppRoutes";
 import './Launcher.css'
 
 import lightLoading from "../../assets/loading/light-loading.svg";
@@ -32,23 +34,82 @@ const Launcher = () => {
         return () => { clearInterval(newInterval) };
     }, []);
 
+    const [inputValues, setInputValues] = useState({ imgSlug: "", output: "" });
+
+    const forContext = useContext(LogInContext);
+    let userSession = forContext.userSession;
+
+    const [message, setMessage] = useState("");
+    const [showLoading, setShowLoading] = useState(false);
 
 
+
+
+    const clearInputValues = () => {
+        setInputValues({ imgSlug: "", output: "" });
+    }
+
+    const sendTrainingToServer = (e) => {
+        e.preventDefault();
+        setShowLoading(true);
+        setMessage("")
+        fetch("http://api.ai-server.becode.org/send_training_to_queue", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${userSession.jwt}`, // From the auth route
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            body: JSON.stringify({
+                docker_image_name: inputValues.imgSlug.toLowerCase(),
+                volume: inputValues.output
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setShowLoading(false);
+                setMessage(data.success)
+                clearInputValues()
+            })
+            .catch((err) => {
+                setShowLoading(false);
+                setMessage(err.error)
+                clearInputValues()
+            })
+
+    }
+
+    useEffect(() => {
+        console.log(showLoading)
+    }, [showLoading])
+
+
+    const [displayMessage, setDisplayMessage] = useState(false);
+
+
+    useEffect(() => {
+        message !== "" && setDisplayMessage(true)
+    }, [message])
 
     return (
         <>
             {canDisplay ? <div className="component-container">
                 <div className="display-input">
-                    <form className="launcher-form" action="">
-                        <label htmlFor="img-slug" className={"mg-bt-5  " + themeColors.textTertiaryColor}><FontAwesomeIcon icon={faDocker} className="icons"/>Image Slug </label>
-                        <input name="img-slug" className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="arungupta/print-hello" />
-                        <label htmlFor="output" className={"mg-bt-5  " + themeColors.textTertiaryColor}><FontAwesomeIcon icon={faFolderTree} className="icons"/>Volume</label>
-                        <input name="output" className={"launcher-input  " + themeColors.colorQuartenary} type="password" placeholder="/output" />
+                    <form className="launcher-form" onSubmit={(e) => sendTrainingToServer(e)}>
+                        <label htmlFor="img-slug " className={"mg-bt-5  " + themeColors.textTertiaryColor} ><FontAwesomeIcon icon={faRightFromBracket} />Image Slug </label>
+                        <input name="img-slug" value={inputValues.imgSlug} className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="DockerHub_username/image_name" onChange={(e) => setInputValues({ ...inputValues, imgSlug: e.target.value })} />
+                        <label htmlFor="output" className={"mg-bt-5  " + themeColors.textTertiaryColor} ><FontAwesomeIcon icon={faRightFromBracket} />Volume</label>
+                        <input name="output" value={inputValues.output} className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="/output" onChange={(e) => setInputValues({ ...inputValues, output: e.target.value })} />
+
                         <br />
                         <div className="display-btn">
                             <button className={"queue-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="submit">Send to queue</button>
                         </div>
                     </form>
+                    <div className="display-message">
+                        {displayMessage ? message : null}
+                        {showLoading ? <img src={lightLoading} alt="wait to load" /> : null}
+                    </div>
                 </div>
             </div> : <img src={lightLoading} alt="wait to load" />}
         </>
