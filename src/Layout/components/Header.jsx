@@ -22,7 +22,10 @@ const Header = () => {
                     <div className="nav-rightend">
                         <div className="profile-pic" style={{ backgroundImage: `url(${profPic})` }}>
                         </div>
-                        <button className="btn" onClick={() => { forContext.setUserSession({isLoggedIn: false, userName: "", jwt: ""}) }}><FontAwesomeIcon icon={faRightFromBracket} />Disconnect</button>
+                        {/* <button className="logout-btn " onClick={() => { forContext.setUserSession({isLoggedIn: false, userName: "", jwt: ""}) }}><FontAwesomeIcon icon={faRightFromBracket} />Disconnect</button> */}
+
+                        <button className={"logout-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} onClick={() => { forContext.setUserSession({isLoggedIn: false, userName: "", jwt: ""}) }}><FontAwesomeIcon icon={faRightFromBracket} /> <span> Disconnect </span> </button>
+
                     </div>
                 </div>
             </nav> : null}
