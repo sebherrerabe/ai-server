@@ -1,7 +1,7 @@
 
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 import { Routes, Route, Navigate } from "react-router";
-import { BrowserRouter, Link } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Layout from "./Layout/Layout";
 
 
@@ -17,12 +17,9 @@ const AppRoutes = () => {
 
   const [userSession, setUserSession] = useState({ isLoggedIn: false, userName: "", jwt: "" })
 
-
-
-
   let isLoggedIn = userSession.isLoggedIn;
 
-  let forContext = { isLoggedIn: isLoggedIn, setUserSession: setUserSession };
+  let forContext = { isLoggedIn: isLoggedIn, setUserSession: setUserSession, userSession: userSession };
 
   return (
     <LogInContext.Provider value={forContext}>
@@ -31,6 +28,7 @@ const AppRoutes = () => {
           <Route index element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Navigate replace to="/login" />} />
           <Route path="login" element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Layout whatIs={"login"} />} />
           <Route path="dashboard" element={!isLoggedIn ? <Navigate replace to="/login" /> : <Layout whatIs={"dashboard"} />} >
+            <Route index element={<Launcher />} />
             <Route path="launcher" element={<Launcher />} />
             <Route path="queue" element={<Queue />} />
             <Route path="past-trainings" element={<Trainings />} />
