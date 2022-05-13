@@ -11,7 +11,6 @@ import { faCheck} from '@fortawesome/free-solid-svg-icons';
 const Trainings = () => {
 
 
-
   const themeColors = useContext(ThemeContext);
 
   const [count, setCount] = useState(0);

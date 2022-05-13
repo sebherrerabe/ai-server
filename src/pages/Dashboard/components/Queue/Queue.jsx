@@ -5,8 +5,14 @@ import "./Queue.css";
 
 import { LogInContext } from "../../../../AppRoutes";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import Row from "./components/Row"
+
+const fakeList = [
+{imageName:"arungupta/print-hello", volume:"/output", position: 1},
+{imageName:"arungupta/print-bye", volume:"/output", position: 2},
+{imageName:"arungupta/print-mom", volume:"/output", position: 3}
+]
+
 
 const Queue = () => {
   const themeColors = useContext(ThemeContext);
@@ -78,27 +84,20 @@ const Queue = () => {
     <>
       {canDisplay ?
         <div className="component-container">
-          <div className={"training-number  " + themeColors.textTertiaryColor}>You have 0 training in queue</div>
+          <div className={"training-number  " + themeColors.textTertiaryColor}>You have {fakeList.length} {fakeList.length === 1 ? "training" : "trainings"} in queue</div>
           <div className="training-table">
             <table>
               <thead>
                 <tr>
-                  <th className={"container-details  " + themeColors.textTertiaryColor}>The docker image name</th>
-                  <th className={"status  " + themeColors.textTertiaryColor}>The position of the training in the queue.</th>
-                  <th className={"artifacts  " + themeColors.textTertiaryColor}>The docker volume.</th>
+                  <th className={"container-details  " + themeColors.textTertiaryColor}>Image Name</th>
+                  <th className={"status  " + themeColors.textTertiaryColor}>Position</th>
+                  <th className={"artifacts  " + themeColors.textTertiaryColor}>Volume</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className={"details  " + themeColors.textTertiaryColor}></td>
-                  <td className={"done  " + themeColors.textTertiaryColor}></td>
-                  <td className={"download  " + themeColors.textTertiaryColor}></td>
-                </tr>
-                <tr>
-                  <td className={"details  " + themeColors.textTertiaryColor}></td>
-                  <td className={"done  " + themeColors.textTertiaryColor}></td>
-                  <td className={"download  " + themeColors.textTertiaryColor}></td>
-                </tr>
+                {fakeList.map(training => {
+                  return <Row imageName={training.imageName} position={training.position} volume={training.volume}/>
+                })}
               </tbody>
             </table>
           </div>
