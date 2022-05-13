@@ -37,7 +37,9 @@ const Login = () => {
       <div className="content">
         <div className="inner-content">
           <div className="login-left">
+          <div className="magic-div ">
             <img src={logo} alt="logo" className="login-logo" />
+            </div>
           </div>
           <div className="login-middle"></div>
           <div className="login-right">
@@ -55,7 +57,7 @@ const Login = () => {
                     <input className={"login-check-box" + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}  type="checkbox" />Remember me
                   </div>
                   <div className="login-form-bottom-right">
-                    <button className={"login-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="submit">Sign in</button>
+                    <button className={"all-btns "  + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}> <span> Sign In </span></button>
                   </div>
                 </div>
               </form>
@@ -63,6 +65,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+
     </>
   )
 }
