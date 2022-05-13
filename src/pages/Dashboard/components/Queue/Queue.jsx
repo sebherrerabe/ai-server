@@ -104,7 +104,6 @@ const Queue = () => {
       </div>
             <div className="refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>
           </div>
-        </div>
         : <img src={lightLoading} alt="wait to load" />}
     </>
   );
