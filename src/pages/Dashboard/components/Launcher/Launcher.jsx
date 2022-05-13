@@ -7,8 +7,8 @@ import './Launcher.css'
 import lightLoading from "../../assets/loading/light-loading.svg";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFolderTree} from '@fortawesome/free-solid-svg-icons'
-import { faDocker} from '@fortawesome/free-brands-svg-icons'
+import { faFolderTree } from '@fortawesome/free-solid-svg-icons'
+import { faDocker } from '@fortawesome/free-brands-svg-icons'
 
 
 
@@ -96,9 +96,9 @@ const Launcher = () => {
             {canDisplay ? <div className="component-container">
                 <div className="display-input">
                     <form className="launcher-form" onSubmit={(e) => sendTrainingToServer(e)}>
-                        <label htmlFor="img-slug " className={"mg-bt-5  " + themeColors.textTertiaryColor} ><FontAwesomeIcon icon={faRightFromBracket} />Image Slug </label>
+                        <label htmlFor="img-slug " className={"mg-bt-5  " + themeColors.textTertiaryColor} ><FontAwesomeIcon icon={faFolderTree} />Image Slug </label>
                         <input name="img-slug" value={inputValues.imgSlug} className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="DockerHub_username/image_name" onChange={(e) => setInputValues({ ...inputValues, imgSlug: e.target.value })} />
-                        <label htmlFor="output" className={"mg-bt-5  " + themeColors.textTertiaryColor} ><FontAwesomeIcon icon={faRightFromBracket} />Volume</label>
+                        <label htmlFor="output" className={"mg-bt-5  " + themeColors.textTertiaryColor} ><FontAwesomeIcon icon={faFolderTree} />Volume</label>
                         <input name="output" value={inputValues.output} className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="/output" onChange={(e) => setInputValues({ ...inputValues, output: e.target.value })} />
 
                         <br />
