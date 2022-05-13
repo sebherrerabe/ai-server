@@ -3,6 +3,10 @@ import { ThemeContext } from "../../../../Layout/Layout";
 import "./Trainings.css";
 
 import lightLoading from "../../assets/loading/light-loading.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLink} from '@fortawesome/free-solid-svg-icons';
+import { faDownload} from '@fortawesome/free-solid-svg-icons';
+import { faCheck} from '@fortawesome/free-solid-svg-icons';
 
 const Trainings = () => {
 
@@ -52,43 +56,44 @@ const Trainings = () => {
     <>
       {canDisplay ?
         <div className="component-container">
-          <div className="training-number">You have 3 training in queue</div>
-          <div className="training-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Container details</th>
-                  <th>Status</th>
-                  <th>Artifacts</th>
-                  <th>Finish date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Details</td>
-                  <td>Done</td>
-                  <td>Download</td>
-                  <td>Date</td>
-                </tr>
-                <tr>
-                  <td>Details</td>
-                  <td>Done</td>
-                  <td>Download</td>
-                  <td>Date</td>
-                </tr>
-                <tr>
-                  <td>Details</td>
-                  <td>Done</td>
-                  <td>Download</td>
-                  <td>Date</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <div className={"training-number  " + themeColors.textTertiaryColor}>You have 3 trainings in queue</div>
+      <div className="training-table">
+        <table>
+          <thead>
+            <tr>
+              <th className={"container-details  " + themeColors.textTertiaryColor}>Container details</th>
+              <th className={"status  " + themeColors.textTertiaryColor}>Status</th>
+              <th className={"artifacts  " + themeColors.textTertiaryColor}>Artifacts</th>
+              <th className={"finish-date  " + themeColors.textTertiaryColor}>Finish date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className={"details  "+ themeColors.textTertiaryColor}><FontAwesomeIcon icon={faLink} className={"icons  " + themeColors.textTertiaryColor}/>Details</td>
+              <td className={"done  " + themeColors.textTertiaryColor}><FontAwesomeIcon icon={faCheck} className={"icons  " +themeColors.textTertiaryColor}/>Done</td>
+              <td className={"download  " + themeColors.textTertiaryColor}><FontAwesomeIcon icon={faDownload} className={"icons  " + themeColors.textTertiaryColor} />Download</td>
+              <td className={"date  " +  themeColors.textTertiaryColor}>Date</td>
+            </tr>
+            <tr>
+            <td className={"details  "+ themeColors.textTertiaryColor}><FontAwesomeIcon icon={faLink} className={"icons  " + themeColors.textTertiaryColor}/>Details</td>
+            <td className={"done  " + themeColors.textTertiaryColor}><FontAwesomeIcon icon={faCheck} className={"icons  " +themeColors.textTertiaryColor}/>Done</td>
+            <td className={"download  " + themeColors.textTertiaryColor}><FontAwesomeIcon icon={faDownload} className={"icons  " + themeColors.textTertiaryColor} />Download</td>
+            <td className={"date  " +  themeColors.textTertiaryColor}>Date</td>
+            </tr>
+            <tr>
+            <td className={"details  "+ themeColors.textTertiaryColor}><FontAwesomeIcon icon={faLink} className={"icons  " + themeColors.textTertiaryColor}/>Details</td>
+            <td className={"done  " + themeColors.textTertiaryColor}><FontAwesomeIcon icon={faCheck} className={"icons  " +themeColors.textTertiaryColor}/>Done</td>
+            <td className={"download  " + themeColors.textTertiaryColor}><FontAwesomeIcon icon={faDownload} className={"icons  " + themeColors.textTertiaryColor} />Download</td>
+            <td className={"date  " +  themeColors.textTertiaryColor}>Date</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
           <div className="training-refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>
         </div>
         : <img src={lightLoading} alt="wait to load" />}
     </>
+
   );
 };
 
