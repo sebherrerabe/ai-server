@@ -50,8 +50,7 @@ const Login = () => {
           </div>
           <div className="login-middle">
             <div className="arrow1">
-
-              <img src={arrow1} alt="arrow" className="login-arrow" />
+              <img src={arrow1} alt="arrow" className={"login-arrow " + themeColors.textTertiaryColor} />
             </div>
           </div>
           <div className="login-right">
@@ -71,7 +70,7 @@ const Login = () => {
                     <input className={"login-check-box" + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="checkbox" />Remember me
                   </div>
                   <div className="login-form-bottom-right">
-                    <button className={"all-btns "  + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}> <span> Sign In </span></button>
+                    <button className={"login-btn "  + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}> <span> Sign In </span></button>
                   </div>
                 </div>
               </form>

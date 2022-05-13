@@ -103,7 +103,7 @@ const Launcher = () => {
 
                         <br />
                         <div className="display-btn">
-                            <button className={"queue-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="submit">Send to queue</button>
+                            <button className={"queue-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="submit"> <span>Send to queue</span> </button>
                         </div>
                     </form>
                     <div className="display-message">
