@@ -1,6 +1,5 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../../../Layout/Layout";
-import "./Trainings.css";
 
 import lightLoading from "../../assets/loading/light-loading.svg";
 
@@ -14,6 +13,7 @@ const Trainings = () => {
   const themeColors = useContext(ThemeContext);
   const forContext = useContext(LogInContext);
   let userSession = forContext.userSession;
+
   const [count, setCount] = useState(0);
 
 
@@ -34,7 +34,6 @@ const Trainings = () => {
         }
       })
       let data = await response.json();
-      console.log(data);
       setTraining(data.data);
       setCanDisplay(true);
       let newInterval = setInterval(() => {
@@ -116,7 +115,7 @@ const Trainings = () => {
         </table>
          : null}
       </div>
-          <div className="training-refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>
+          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className="refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>}
         </div>
         : <img src={lightLoading} alt="wait to load" />}
     </>
