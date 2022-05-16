@@ -4,9 +4,9 @@ import "./Trainings.css";
 
 import lightLoading from "../../assets/loading/light-loading.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink} from '@fortawesome/free-solid-svg-icons';
-import { faDownload} from '@fortawesome/free-solid-svg-icons';
-import { faCheck} from '@fortawesome/free-solid-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import { LogInContext } from "../../../../AppRoutes";
 
@@ -15,8 +15,8 @@ import Row from "./components/Row";
 
 const Trainings = () => {
   const themeColors = useContext(ThemeContext);
-  const forContext = useContext(LogInContext); 
-  let userSession = forContext.userSession; 
+  const forContext = useContext(LogInContext);
+  let userSession = forContext.userSession;
   const [count, setCount] = useState(0);
 
 
@@ -26,19 +26,19 @@ const Trainings = () => {
 
   const [training, setTraining] = useState([])
 
-const getTrainings = useCallback(async () => {
-  let slowDown = 0;
-  
-  try {
-    let response = await fetch(`http://api.ai-server.becode.org/get_all_training_queue`, {
-      method: "GET",
-      headers : {
-        "Authorization": `Bearer ${userSession.jwt}`// From the auth route
-    }
-    })
-    let data = await response.json();
-    console.log(data);
-    setTraining(data.data);
+  const getTrainings = useCallback(async () => {
+    let slowDown = 0;
+
+    try {
+      let response = await fetch(`http://api.ai-server.becode.org/get_all_training_queue`, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${userSession.jwt}`// From the auth route
+        }
+      })
+      let data = await response.json();
+      console.log(data);
+      setTraining(data.data);
       setCanDisplay(true);
       let newInterval = setInterval(() => {
         if (slowDown === 1) {
@@ -53,13 +53,13 @@ const getTrainings = useCallback(async () => {
       console.error(err);
       // Handle errors here
     }
-  },[userSession.jwt, setTraining, setCanDisplay, setLoadingQueue]);
+  }, [userSession.jwt, setTraining, setCanDisplay, setLoadingQueue]);
 
 
   useEffect(() => {
     getTrainings();
   }, [getTrainings]);
-  
+
 
   useEffect(() => {
     let newInterval = setInterval(() => {
@@ -100,28 +100,25 @@ const getTrainings = useCallback(async () => {
       {canDisplay ?
         <div className="component-container">
           <div className={"training-number  " + themeColors.textTertiaryColor}>You have {training.length} {training.length === 1 ? "training" : "trainings"} in queue</div>
-      <div className="table-overflow">
-        {training.queue !== 0 ? 
-       
-        <table>
-          <thead>
-          
-            <tr>
-              <th className={"container-details  " + themeColors.textTertiaryColor}>Container details</th>
-              <th className={"status  " + themeColors.textTertiaryColor}>Status</th>
-              <th className={"artifacts  " + themeColors.textTertiaryColor}>Artifacts</th>
-              <th className={"finish-date  " + themeColors.textTertiaryColor}>Finish date</th>
-            </tr>
-          
-          </thead>
-          <tbody>
-            {training.map((item, index) => <Row key ={index} containerDetails={item.containerDetails} status={item.status} artifacts={item.artifacts} finishDate={item.finishDate}/>)}
-          </tbody>
-        </table>
-         : null}
-      </div>
-     
-          <div className="training-refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>
+          <div className="training-table">
+            {training.queue !== 0 ?
+              <table>
+                <thead>
+                  <tr>
+                    <th className={"container-details  " + themeColors.textTertiaryColor}>Container details</th>
+                    <th className={"status  " + themeColors.textTertiaryColor}>Status</th>
+                    <th className={"artifacts  " + themeColors.textTertiaryColor}>Artifacts</th>
+                    <th className={"finish-date  " + themeColors.textTertiaryColor}>Finish date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {training.map((item, index) => <Row key={index} containerDetails={item.containerDetails} status={item.status} artifacts={item.artifacts} finishDate={item.finishDate} />)}
+                </tbody>
+              </table>
+              : null}
+          </div>
+
+          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className="refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>}
         </div>
         : <img src={lightLoading} alt="wait to load" />}
     </>

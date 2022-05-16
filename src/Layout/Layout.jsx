@@ -16,15 +16,15 @@ const Layout = ({ whatIs }) => {
     const light = cssClasses.light;
     const dark = cssClasses.dark;
 
-    const [themeMode, setThemeMode] = useState(true);
+    const [themeMode, setThemeMode] = useState(false);
     const [themeColors, setThemeColors] = useState({
-        colorPrimary: light.colorPrimary,
-        colorSecondary: light.colorSecondary,
-        colorTertiary: light.colorTertiary,
-        bgColor: light.bgColor,
-        textPrimaryColor: light.textPrimaryColor,
-        textSecondaryColor: light.textSecondaryColor,
-        textTertiaryColor: light.textTertiaryColor
+        colorPrimary: dark.colorPrimary,
+        colorSecondary: dark.colorSecondary,
+        colorTertiary: dark.colorTertiary,
+        bgColor: dark.bgColor,
+        textPrimaryColor: dark.textPrimaryColor,
+        textSecondaryColor: dark.textSecondaryColor,
+        textTertiaryColor: dark.textTertiaryColor
     })
 
     const switchMode = () => {

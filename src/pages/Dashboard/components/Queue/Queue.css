@@ -5,31 +5,3 @@
   flex-direction: column;
   justify-content: center;
 }
-.queue-number {
-  height: 15%;
-  width: 100%;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  text-align: center;
-}
-.training-table {
-  height: 70%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-}
-
-.refreshing-msg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 15%;
-  width: 100%;
-  font-size: 15px;
-}
