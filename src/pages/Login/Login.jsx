@@ -2,7 +2,7 @@
 import logo from './assets/img/logo-becode.png'
 import './Login.css'
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../Layout/Layout";
 import { LogInContext } from "../../AppRoutes";
 
@@ -15,6 +15,8 @@ const Login = () => {
   const forContext = useContext(LogInContext);
 
   const [inputValues, setInputValues] = useState({ userName: "", password: "" });
+
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -31,12 +33,22 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        forContext.setUserSession({ isLoggedIn: true, userName: inputValues.userName, jwt: data.jwt });
+        if (data.details) {
+          console.log(data.details) // this is the error message
+          //We should probably display it somewhere
+        } else {
+          if (isChecked) {
+            localStorage.setItem("token", JSON.stringify({ jwt: data.jwt, userName: inputValues.userName })); // we store the token in local storage
+          }
+          forContext.setUserSession({ isLoggedIn: true, userName: inputValues.userName, jwt: data.jwt }); // we set the user session
+        }
       })
       .catch((err) => {
         console.log(err)
       });
   }
+
+
 
   return (
     <>
@@ -67,7 +79,8 @@ const Login = () => {
                 </div>
                 <div className="login-form-bottom">
                   <div className="login-form-bottom-left">
-                    <input className={"login-check-box" + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="checkbox" />Remember me
+                    {/* Remember me functionality */}
+                    <input className={"login-check-box" + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="checkbox" onChange={() => setIsChecked(!isChecked)} />Remember me
                   </div>
                   <div className="login-form-bottom-right">
                     <button className={"all-btns " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}> <span> Sign In </span></button>

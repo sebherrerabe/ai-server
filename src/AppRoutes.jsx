@@ -1,5 +1,5 @@
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router";
 import { BrowserRouter } from 'react-router-dom';
 import Layout from "./Layout/Layout";
@@ -16,6 +16,22 @@ const AppRoutes = () => {
 
 
   const [userSession, setUserSession] = useState({ isLoggedIn: false, userName: "", jwt: "" })
+
+  const getJWTfromLocalStorage = async () => {
+    try {
+      let data = JSON.parse(localStorage.getItem("token")) // get token from local storage
+      if (data.jwt !== "") {
+        setUserSession({ isLoggedIn: true, userName: data.userName, jwt: data.jwt })
+      }
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    getJWTfromLocalStorage()
+  }, [])
 
   let isLoggedIn = userSession.isLoggedIn;
 
