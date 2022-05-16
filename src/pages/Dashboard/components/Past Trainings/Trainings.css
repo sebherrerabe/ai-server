@@ -1,39 +1,3 @@
-
-.training-number {
-    height: 15%;
-    width: 100%;    
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-}
-
-.training-table {
-    width: 100%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.training-table table {
-    width: 80%;
-    height: 80%;
-}
-
 .training-table table td{
     text-align: center;
 }
-.training-refreshing-msg {
-    height: 15%;
-    width: 100%;   
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-}
-.table-overflow {
-    overflow-y: scroll;
-    border: 1px solid red;
-   width: 100%;
-   height: 100%;
-    position: relative;
-  }
