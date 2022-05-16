@@ -42,6 +42,9 @@ const Queue = () => {
       }
       )
       let data = await response.json();
+      console.log(data);
+
+
       setQueue(data.data);
       setCanDisplay(true);
       let newInterval = setInterval(() => {
