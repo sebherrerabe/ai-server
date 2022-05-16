@@ -9,6 +9,7 @@ import "./Queue.css";
 import { LogInContext } from "../../../../AppRoutes";
 
 
+
 const Queue = () => {
   const themeColors = useContext(ThemeContext); // this is the theme context to change the color of the text and background in dark mode
   const forContext = useContext(LogInContext); // this is the context to get the user info from the login page
@@ -41,6 +42,9 @@ const Queue = () => {
       }
       )
       let data = await response.json();
+      console.log(data);
+
+
       setQueue(data.data);
       setCanDisplay(true);
       let newInterval = setInterval(() => {

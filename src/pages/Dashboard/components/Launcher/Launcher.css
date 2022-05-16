@@ -36,11 +36,36 @@
   display: flex;
   justify-content: center;
 }
+
 .queue-btn {
-  width: 150px;
-  height: 50px;
-  border-radius: 4px;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-}
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    width: 170px;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .queue-btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .queue-btn span:after {
+    content: '\27A4'; 
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 75px;
+    transition: 0.3s;
+  }
+  .queue-btn:hover span {
+    padding-right: 30px;
+  }
+  .queue-btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  } 
