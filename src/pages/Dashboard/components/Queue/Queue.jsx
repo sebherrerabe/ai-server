@@ -21,7 +21,7 @@ const Queue = () => {
 
   const [queue, setQueue] = useState([]); // this is the state to store the queue
 
-   // this is the state to slow down the loading animation
+  // this is the state to slow down the loading animation
 
 
 
@@ -56,7 +56,7 @@ const Queue = () => {
       console.error(err);
       // Handle errors here
     }
-  },[userSession.jwt, setQueue, setCanDisplay, setLoadingQueue]);
+  }, [userSession.jwt, setQueue, setCanDisplay, setLoadingQueue]);
 
 
 
@@ -93,7 +93,7 @@ const Queue = () => {
     <>
       {canDisplay ?
         <div className="component-container">
-          <div className={"training-number  " + themeColors.textTertiaryColor}>You have {queue.length} {queue.length === 1 ? "training" : "trainings"} in queue</div>
+          <div className={"queue-number  " + themeColors.textTertiaryColor}>You have {queue.length} {queue.length === 1 ? "training" : "trainings"} in queue</div>
           <div className="training-table">
             {queue.length !== 0 ?
               <table>
