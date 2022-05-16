@@ -1,145 +1,155 @@
 .nocolumn {
-    flex-direction: row;
+  flex-direction: row;
 }
 .left-container {
- width: 25%;
- height: 100%;
+  width: 25%;
+  height: 100%;
   /* background-color: #99743d; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 .middle-container {
-    /* background-color: darkcyan; */
-    height: 100%;
-    width: 15%;
+  /* background-color: darkcyan; */
+  height: 100%;
+  width: 15%;
 }
 .right-container {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    /* background-color: cadetblue; */
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* background-color: cadetblue; */
 }
 .right-container-top {
-    height: 17%;
-    width: 100%;
-    /* background-color: darkkhaki; */
-    display: flex;
-    align-items: center;
-    padding: 10px;
+  height: 17%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
-.right-container-bottom{
-    height: 83%;
-    width: 100%;
-    /* background-color: rgb(108, 107, 189); */
+.right-container-bottom {
+  height: 83%;
+  width: 100%;
 }
 
 .welcome-container {
-    height: 100%;
-    width: 30%;  
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+}
+.welcome-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+.welcome-container h3,
+h5 {
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .display-profpic {
-    height: 70px;
-    width: 70px;
-    margin-right: 20px;
-    border-radius: 5px;
-    background-size: contain;
-    background-position: center;
+  height: 80px;
+  width: 80px;
+  border-radius: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.tabs{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 50%;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 50%;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
 }
 
 .tabs-btn {
-    width: 100%;
-    margin: 15px 0 15px 0;
-    border: none;
-    border-radius: 5px;
-    padding: 20px;
-    font-size: 20px;
-    text-align: left;
-    text-decoration: none;
+  width: 100%;
+  margin: 15px 0 15px 0;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 20px;
+  text-align: left;
+  text-decoration: none;
 }
 
-.display{
-    display: flex;
-    flex-direction: column;
-    height: 85%;
-    width: 90%; 
-    border-radius: 5px;
+.display {
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  width: 90%;
+  border-radius: 5px;
 }
 .display-top {
-    display: flex;
-    align-items: center;
-    height: 20%;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  height: 20%;
+  width: 100%;
 }
-.display-top-left{
-    display: flex;
-    height: 100%;
-    width: 15%;
-    align-items: center;
+.display-top-left {
+  display: flex;
+  height: 100%;
+  width: 15%;
+  align-items: center;
 }
 .display-top-middle {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .display-top-right {
-    width: 15%;
-    height: 100%;
+  width: 15%;
+  height: 100%;
 }
 
 .display-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .display-message {
-    display: flex;
-    flex-direction: column;
-    height: 30%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon-square {
-    height: 30px;
-    width: 30px;
-    margin-left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 30px;
+  width: 30px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .main-title {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
-.component-container{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
+.component-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .icons {
-    margin-right: 8px;
+  margin-right: 8px;
 }
+

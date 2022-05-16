@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+
+import { LogInContext } from "../../AppRoutes";
 import "./Dashboard.css";
 
 import profPic from "../../Layout/assets/img/nerd.jpeg";
@@ -23,7 +25,7 @@ const Tab = ({ path, icon, btnName, themeColors, setIsActive, index, isActive })
 
   return (
     <Link to={path} className={`tabs-btn ${amActive ? themeColors.colorSecondary + " " + themeColors.textSecondaryColor : themeColors.colorPrimary + " " + themeColors.textTertiaryColor} `} onClick={() => { setIsActive(index) }}>
-      <FontAwesomeIcon icon={icon} className="icons"/>
+      <FontAwesomeIcon icon={icon} className="icons" />
       {btnName}
     </Link>)
 }
@@ -43,6 +45,9 @@ const Dashboard = () => {
 
   const [isActive, setIsActive] = useState(0);
 
+  const forContext = useContext(LogInContext);
+
+  const userSession = forContext.userSession;
 
   const [title, setTitle] = useState({ title: "", icon: dashboardComponents[0].icon })
 
@@ -59,10 +64,12 @@ const Dashboard = () => {
       <div className="middle-container"></div>
       <div className="right-container flex">
         <div className="right-container-top">
-        <div className="display-profpic" style={{ backgroundImage: `url(${profPic})` }}></div>
           <div className={"welcome-container  " + themeColors.textTertiaryColor}>
-            <h3>Hello, Name Surname</h3>
-            <h5><FontAwesomeIcon icon={faLessThan}/> / <FontAwesomeIcon icon={faGreaterThan}/>Johnsons 7</h5>
+            <div className="display-profpic" style={{ backgroundImage: `url(${profPic})` }}></div>
+            <div className="welcome-text">
+              <h3>Hello, {userSession.userName}</h3>
+              <h5><FontAwesomeIcon icon={faLessThan} size='xs' /> / <FontAwesomeIcon icon={faGreaterThan} size='xs' /> Johnson 7</h5>
+            </div>
           </div>
         </div>
         <div className="right-container-bottom">
