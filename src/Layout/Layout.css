@@ -16,7 +16,8 @@ nav {
 }
 .content {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
+  margin: 0 10%;
   justify-content: center;
   align-items: center;
   height: 85%;

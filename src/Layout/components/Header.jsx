@@ -14,6 +14,11 @@ const Header = () => {
 
     const themeColors = useContext(ThemeContext);
 
+    const handleLogOut = () => {
+        forContext.setUserSession({ isLoggedIn: false, userName: "", jwt: "" })
+        localStorage.removeItem("token"); // remove token from local storage, like that if user refresh the page, he will be logged out
+    }
+
     return (
         <header>
             {forContext.isLoggedIn ? <nav className={themeColors.colorPrimary}>
@@ -22,9 +27,10 @@ const Header = () => {
                     <div className="nav-rightend">
                         <div className="profile-pic" style={{ backgroundImage: `url(${profPic})` }}>
                         </div>
-                        {/* <button className="logout-btn " onClick={() => { forContext.setUserSession({isLoggedIn: false, userName: "", jwt: ""}) }}><FontAwesomeIcon icon={faRightFromBracket} />Disconnect</button> */}
 
-                        <button className={"logout-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} onClick={() => { forContext.setUserSession({isLoggedIn: false, userName: "", jwt: ""}) }}><FontAwesomeIcon icon={faRightFromBracket} /> <span> Disconnect </span> </button>
+   
+
+                        <button className={"logout-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}  onClick={() => handleLogOut() }><FontAwesomeIcon icon={faRightFromBracket} /> <span> Disconnect </span> </button>
 
                     </div>
                 </div>
