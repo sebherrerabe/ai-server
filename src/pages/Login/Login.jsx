@@ -61,8 +61,8 @@ const Login = () => {
             <div className="login-right-middle">
               <form className="login-form"
                 action="dashboard" onSubmit={(e) => { handleLogin(e) }}>
-                <input className={"login-input user " + themeColors.colorPrimary} type="text" placeholder="Username" onChange={(e) => { setInputValues({ ...inputValues, userName: e.target.value }) }} />
-                <input className={"login-input " + themeColors.colorPrimary} type="password" placeholder="Password" onChange={(e) => { setInputValues({ ...inputValues, password: e.target.value }) }} />
+                <input className={"login-input user " + themeColors.colorPrimary + " " + themeColors.textPrimaryColor} type="text" placeholder="Username" onChange={(e) => { setInputValues({ ...inputValues, userName: e.target.value }) }} />
+                <input className={"login-input " + themeColors.colorPrimary + " " + themeColors.textPrimaryColor} type="password" placeholder="Password" onChange={(e) => { setInputValues({ ...inputValues, password: e.target.value }) }} />
                 <div className="login-form-middle">
                   <img src={arrow2} alt="arrow" className="login-arrow" />
                 </div>

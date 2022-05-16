@@ -91,19 +91,31 @@ const Launcher = () => {
         message !== "" && setDisplayMessage(true)
     }, [message])
 
+
+
+    
     return (
         <>
             {canDisplay ? <div className="component-container">
                 <div className="display-input">
                     <form className="launcher-form" onSubmit={(e) => sendTrainingToServer(e)}>
-                        <label htmlFor="img-slug " className={"mg-bt-5  " + themeColors.textTertiaryColor} ><FontAwesomeIcon icon={faDocker} />Image Slug </label>
+
+                        <label htmlFor="img-slug " 
+                        className={"mg-bt-5  " + themeColors.textTertiaryColor} ><FontAwesomeIcon icon={faDocker} />Image Slug </label>
+
                         <input name="img-slug" value={inputValues.imgSlug} className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="DockerHub_username/image_name" onChange={(e) => setInputValues({ ...inputValues, imgSlug: e.target.value })} />
-                        <label htmlFor="output" className={"mg-bt-5  " + themeColors.textTertiaryColor} ><FontAwesomeIcon icon={faFolderTree} />Volume</label>
+
+                        <label htmlFor="output" 
+                        className={"mg-bt-5 " + themeColors.textTertiaryColor  + themeColors.textPrimaryColor} ><FontAwesomeIcon icon={faFolderTree} />Volume</label>
+
                         <input name="output" value={inputValues.output} className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="/output" onChange={(e) => setInputValues({ ...inputValues, output: e.target.value })} />
 
                         <br />
                         <div className="display-btn">
-                            <button className={"queue-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} type="submit"> <span>Send to queue</span> </button>
+                            <button className={"queue-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} 
+                            
+                            
+                            type="submit"> <span>Send to queue</span> </button>
                         </div>
                     </form>
                     <div className="display-message">

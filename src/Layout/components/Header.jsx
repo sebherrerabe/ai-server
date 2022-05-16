@@ -24,7 +24,7 @@ const Header = () => {
                         </div>
                         {/* <button className="logout-btn " onClick={() => { forContext.setUserSession({isLoggedIn: false, userName: "", jwt: ""}) }}><FontAwesomeIcon icon={faRightFromBracket} />Disconnect</button> */}
 
-                        <button className={"logout-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} onClick={() => { forContext.setUserSession({isLoggedIn: false, userName: "", jwt: ""}) }}><FontAwesomeIcon icon={faRightFromBracket} /> <span> Disconnect </span> </button>
+                        <button className={"logout-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} onClick={() => { forContext.setUserSession({isLoggedIn: false, userName: "", jwt: ""}) }}> <span> Disconnect </span> </button>
 
                     </div>
                 </div>
