@@ -4,6 +4,7 @@ import "./Trainings.css";
 
 import lightLoading from "../../assets/loading/light-loading.svg";
 
+
 import { LogInContext } from "../../../../AppRoutes";
 
 import Row from "./components/Row";
@@ -11,8 +12,8 @@ import Row from "./components/Row";
 
 const Trainings = () => {
   const themeColors = useContext(ThemeContext);
-  const forContext = useContext(LogInContext); 
-  let userSession = forContext.userSession; 
+  const forContext = useContext(LogInContext);
+  let userSession = forContext.userSession;
   const [count, setCount] = useState(0);
 
 
@@ -22,19 +23,19 @@ const Trainings = () => {
 
   const [training, setTraining] = useState([])
 
-const getTrainings = useCallback(async () => {
-  let slowDown = 0;
-  
-  try {
-    let response = await fetch(`http://api.ai-server.becode.org/get_all_training_queue`, {
-      method: "GET",
-      headers : {
-        "Authorization": `Bearer ${userSession.jwt}`// From the auth route
-    }
-    })
-    let data = await response.json();
-    console.log(data);
-    setTraining(data.data);
+  const getTrainings = useCallback(async () => {
+    let slowDown = 0;
+
+    try {
+      let response = await fetch(`http://api.ai-server.becode.org/get_all_training_queue`, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${userSession.jwt}`// From the auth route
+        }
+      })
+      let data = await response.json();
+      console.log(data);
+      setTraining(data.data);
       setCanDisplay(true);
       let newInterval = setInterval(() => {
         if (slowDown === 1) {
@@ -49,13 +50,13 @@ const getTrainings = useCallback(async () => {
       console.error(err);
       // Handle errors here
     }
-  },[userSession.jwt, setTraining, setCanDisplay, setLoadingQueue]);
+  }, [userSession.jwt, setTraining, setCanDisplay, setLoadingQueue]);
 
 
   useEffect(() => {
     getTrainings();
   }, [getTrainings]);
-  
+
 
   useEffect(() => {
     let newInterval = setInterval(() => {
@@ -96,9 +97,9 @@ const getTrainings = useCallback(async () => {
       {canDisplay ?
         <div className="component-container">
           <div className={"training-number  " + themeColors.textTertiaryColor}>You have {training.length} {training.length === 1 ? "training" : "trainings"} in queue</div>
+
       <div className="training-table">
         {training.queue !== 0 ? 
-       
         <table>
           <thead>
             <tr>
@@ -115,7 +116,6 @@ const getTrainings = useCallback(async () => {
         </table>
          : null}
       </div>
-     
           <div className="training-refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>
         </div>
         : <img src={lightLoading} alt="wait to load" />}
