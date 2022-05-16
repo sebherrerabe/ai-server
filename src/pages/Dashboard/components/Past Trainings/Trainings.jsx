@@ -3,10 +3,6 @@ import { ThemeContext } from "../../../../Layout/Layout";
 import "./Trainings.css";
 
 import lightLoading from "../../assets/loading/light-loading.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink} from '@fortawesome/free-solid-svg-icons';
-import { faDownload} from '@fortawesome/free-solid-svg-icons';
-import { faCheck} from '@fortawesome/free-solid-svg-icons';
 
 import { LogInContext } from "../../../../AppRoutes";
 
@@ -100,12 +96,11 @@ const getTrainings = useCallback(async () => {
       {canDisplay ?
         <div className="component-container">
           <div className={"training-number  " + themeColors.textTertiaryColor}>You have {training.length} {training.length === 1 ? "training" : "trainings"} in queue</div>
-      <div className="table-overflow">
+      <div className="training-table">
         {training.queue !== 0 ? 
        
         <table>
           <thead>
-          
             <tr>
               <th className={"container-details  " + themeColors.textTertiaryColor}>Container details</th>
               <th className={"status  " + themeColors.textTertiaryColor}>Status</th>
