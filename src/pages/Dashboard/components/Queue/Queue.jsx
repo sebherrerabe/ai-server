@@ -96,7 +96,7 @@ const Queue = () => {
           <div className={"training-number  " + themeColors.textTertiaryColor}>You have {queue.length} {queue.length === 1 ? "training" : "trainings"} in queue</div>
           <div className="training-table">
             {queue.length !== 0 ?
-              <table>
+              <table id="queue">
                 <thead>
                   <tr className={themeColors.textTertiaryColor}>
                     <th>Position</th>
