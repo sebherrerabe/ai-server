@@ -20,7 +20,7 @@ const AppRoutes = () => {
   const getJWTfromLocalStorage = async () => {
     try {
       let data = JSON.parse(localStorage.getItem("token")) // get token from local storage
-      if (data.jwt !== "") {
+      if (data.jwt) {
         setUserSession({ isLoggedIn: true, userName: data.userName, jwt: data.jwt })
       }
     }

@@ -4,7 +4,6 @@ import { ThemeContext } from "../../../../Layout/Layout";
 
 import Row from "./components/Row";
 
-import "./Queue.css";
 
 import { LogInContext } from "../../../../AppRoutes";
 

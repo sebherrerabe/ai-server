@@ -15,6 +15,7 @@ import { faDocker } from '@fortawesome/free-brands-svg-icons'
 const Launcher = () => {
     const themeColors = useContext(ThemeContext);
 
+
     const [count, setCount] = useState(0);
     const [canDisplay, setCanDisplay] = useState(false);
 
@@ -79,9 +80,6 @@ const Launcher = () => {
 
     }
 
-    useEffect(() => {
-        console.log(showLoading)
-    }, [showLoading])
 
 
     const [displayMessage, setDisplayMessage] = useState(false);
