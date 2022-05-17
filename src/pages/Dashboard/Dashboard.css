@@ -205,5 +205,20 @@ tbody td {
   width: 100%;
   font-size: 15px;
 }
-
-
+.icon {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+td .icon {
+  margin-right: 0;
+}
+.a-con {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  height: 100%;
+}
