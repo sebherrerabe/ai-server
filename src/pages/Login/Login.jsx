@@ -23,7 +23,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     
-    fetch("https://api.ai-server.becode.org/api/auth", {
+    fetch("http://api.ai-server.becode.org/api/auth", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

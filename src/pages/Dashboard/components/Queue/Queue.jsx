@@ -38,7 +38,7 @@ const Queue = () => {
     setLoadingQueue(true);
     setSeconds(30)
     try {
-      let response = await fetch(`https://api.ai-server.becode.org/get_user_training_queue`, {
+      let response = await fetch(`http://api.ai-server.becode.org/get_user_training_queue`, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${userSession.jwt}`, // From the auth route

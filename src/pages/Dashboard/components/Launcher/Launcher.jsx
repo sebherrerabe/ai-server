@@ -54,7 +54,7 @@ const Launcher = () => {
         e.preventDefault();
         setShowLoading(true);
         setMessage("")
-        fetch("https://api.ai-server.becode.org/send_training_to_queue", {
+        fetch("http://api.ai-server.becode.org/send_training_to_queue", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${userSession.jwt}`, // From the auth route
