@@ -27,7 +27,8 @@ const Header = () => {
                     <div className="nav-rightend">
                         <div className="profile-pic" style={{ backgroundImage: `url(${profPic})` }}>
                         </div>
-                        <button className={"logout-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}  onClick={() => handleLogOut() }><FontAwesomeIcon icon={faRightFromBracket} /> <span> Disconnect </span> </button>
+                        <button className={"logout-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor} onClick={() => { forContext.setUserSession({isLoggedIn: false, userName: "", jwt: ""}) }}> <span> Disconnect </span> </button>
+
                     </div>
                 </div>
             </nav> : null}
