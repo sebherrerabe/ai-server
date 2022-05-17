@@ -69,3 +69,8 @@
     opacity: 1;
     right: 0;
   } 
+
+  .test {
+    height: 200px;
+    width: 200px;
+  }
