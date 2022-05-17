@@ -27,6 +27,8 @@ const Trainings = () => {
 
   const getTrainings = useCallback(async () => {
     let slowDown = 0;
+    setLoadingQueue(true);
+    setSeconds(30)
     try {
       let response = await fetch(`http://api.ai-server.becode.org/get_all_training_queue`, {
         method: "GET",
@@ -116,8 +118,9 @@ const Trainings = () => {
               </table>
               : null}
           </div>
-          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className={"refreshing-msg " + themeColors.textTertiaryColor} > <div className="icon" onClick={() => {console.log('something')}}> < FontAwesomeIcon icon={faRotate}  /> </div> It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>}
-
+          <div className={"refreshing-msg " + themeColors.textTertiaryColor} >
+            {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <><div className="icon rotate" onClick={() => { getTrainings() }}> < FontAwesomeIcon icon={faRotate} /></div> <p> It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</p></>}
+          </div>
         </div>
         : <img src={lightLoading} alt="wait to load" datacount={count} />}
     </>

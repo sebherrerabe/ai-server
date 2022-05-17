@@ -213,12 +213,23 @@ tbody td {
   align-items: center;
   margin-right: 5px;
 }
+.rotate {
+  cursor: pointer;
+}
+.rotate:hover {
+  cursor: pointer;
+  transform: translate(0, -1px);
+}
 td .icon {
   margin-right: 0;
 }
 .a-con {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   align-items: center;
   height: 100%;
+}
+.loading-queue {
+  height: 30px;
+  width: 30px;
 }
