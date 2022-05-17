@@ -89,6 +89,7 @@ const Launcher = () => {
         message !== "" && setDisplayMessage(true)
     }, [message])
 
+    // className={"launcher-input  " + themeColors.colorQuartenary} // old
 
     return (
         <>

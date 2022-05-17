@@ -20,32 +20,42 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    fetch("http://api.ai-server.becode.org/api/auth", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify({
-        username: inputValues.userName,
-        password: inputValues.password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.details) {
-          console.log(data.details) // this is the error message
-          //We should probably display it somewhere
-        } else {
-          if (isChecked) {
-            localStorage.setItem("token", JSON.stringify({ jwt: data.jwt, userName: inputValues.userName })); // we store the token in local storage
-          }
-          forContext.setUserSession({ isLoggedIn: true, userName: inputValues.userName, jwt: data.jwt }); // we set the user session
-        }
-      })
-      .catch((err) => {
-        console.log(err)
-      });
+
+
+
+    // fetch("http://api.ai-server.becode.org/api/auth", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Accept": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     username: inputValues.userName,
+    //     password: inputValues.password,
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     if (data.details) {
+    //       console.log(data.details) // this is the error message
+    //       //We should probably display it somewhere
+    //     } else {
+    //       if (isChecked) {
+    //         localStorage.setItem("token", JSON.stringify({ jwt: data.jwt, userName: inputValues.userName })); // we store the token in local storage
+    //       }
+    //       forContext.setUserSession({ isLoggedIn: true, userName: inputValues.userName, jwt: data.jwt }); // we set the user session
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     console.log(err)
+    //   });
+
+
+
+    forContext.setUserSession({ isLoggedIn: true, userName: "fake", jwt: ""});
+
+
+    
   }
 
 

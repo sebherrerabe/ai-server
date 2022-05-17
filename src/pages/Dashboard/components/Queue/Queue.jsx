@@ -110,7 +110,7 @@ const Queue = () => {
               </table>
               : null}
           </div>
-          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className="refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>}
+          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className={"refreshing-msg " + themeColors.textTertiaryColor} >It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>}
         </div>
         : <img src={lightLoading} alt="wait to load" />}
     </>
@@ -118,3 +118,5 @@ const Queue = () => {
 };
 
 export default Queue;
+
+
