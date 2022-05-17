@@ -5,7 +5,7 @@ import Login from "../pages/Login/Login";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import './Layout.css';
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 import cssClasses from "./cssClasses.json"
 
@@ -25,7 +25,6 @@ const Layout = ({ whatIs }) => {
         const darkOrLight = themeMode ? light : dark;
         setThemeColors({ ...darkOrLight })
     }
-
 
     return (
         <ThemeContext.Provider value={themeColors}>

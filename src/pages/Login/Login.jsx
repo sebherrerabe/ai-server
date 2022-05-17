@@ -2,7 +2,7 @@
 import logo from './assets/img/logo-becode.png'
 import './Login.css'
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "../../Layout/Layout";
 import { LogInContext } from "../../AppRoutes";
 
@@ -17,6 +17,8 @@ const Login = () => {
   const [inputValues, setInputValues] = useState({ userName: "", password: "" });
 
   const [isChecked, setIsChecked] = useState(false);
+
+  const [message, setMessage] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -35,8 +37,7 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.details) {
-          console.log(data.details) // this is the error message
-          //We should probably display it somewhere
+          setMessage(data.details);
         } else {
           if (isChecked) {
             localStorage.setItem("token", JSON.stringify({ jwt: data.jwt, userName: inputValues.userName })); // we store the token in local storage
@@ -87,11 +88,13 @@ const Login = () => {
                   <div className="login-form-bottom-right">
 
                     <button className={"login-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}> <span> Sign In </span></button>
+
                   </div>
                 </div>
               </form>
             </div>
             <div className="login-right-bottom">
+              <p className={themeColors.textPrimaryColor}>{message }</p>
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  width:37%;
+  width: 37%;
 }
 
 .login-middle {
@@ -30,13 +30,20 @@
 
 .login-right-top {
   display: flex;
-  height: 15%;
+  height: 30%;
   align-items: center;
 }
 .login-right-middle {
   display: flex;
-  height: 85%;
+  height: 55%;
   align-items: center;
+}
+
+.login-right-bottom {
+  display: flex;
+  justify-content: center;
+  height: 15%;
+  width: 100%;
 }
 
 .login-form {
@@ -75,7 +82,6 @@
   display: flex;
   height: 50px;
 }
-
 .login-form-bottom-left {
   display: flex;
   align-items: center;
@@ -107,20 +113,16 @@
   height: 350px;
 }
 
-.magic-div  {
+.magic-div {
   width: 350px;
   height: 350px;
   border-radius: 50%;
   position: relative;
   z-index: 0;
 }
-.magic-div:before{
+.magic-div:before {
   content: "";
-background: linear-gradient(45deg ,
-#3498db ,
-#6aafdd ,
-#3c8891);
-
+  background: linear-gradient(45deg, #3498db, #6aafdd, #3c8891);
 
   position: absolute;
   top: -2px;
@@ -132,16 +134,22 @@ background: linear-gradient(45deg ,
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 50%;
 }
-.magic-div:before{
+.magic-div:before {
   opacity: 1;
 }
 @keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .login-btn {
@@ -162,7 +170,7 @@ background: linear-gradient(45deg ,
   transition: 0.5s;
 }
 .login-btn span:after {
-  content: '\27A4'; 
+  content: "\27A4";
   position: absolute;
   opacity: 0;
   top: 0;

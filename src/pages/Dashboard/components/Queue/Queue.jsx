@@ -6,6 +6,10 @@ import Row from "./components/Row";
 import "./Queue.css"
 
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRotate } from '@fortawesome/free-solid-svg-icons'
+
+
 import { LogInContext } from "../../../../AppRoutes";
 
 
@@ -110,7 +114,7 @@ const Queue = () => {
               </table>
               : null}
           </div>
-          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className={"refreshing-msg " + themeColors.textTertiaryColor} >It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>}
+          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className={"refreshing-msg " + themeColors.textTertiaryColor} > <div className="icon" onClick={() => {console.log('something')}}> < FontAwesomeIcon icon={faRotate}  /> </div> It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>}
         </div>
         : <img src={lightLoading} alt="wait to load" />}
     </>
