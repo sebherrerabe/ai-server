@@ -22,7 +22,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
+    
     fetch("http://api.ai-server.becode.org/api/auth", {
       method: "POST",
       headers: {
@@ -38,6 +38,7 @@ const Login = () => {
       .then((data) => {
         if (data.details) {
           setMessage(data.details);
+
         } else {
           if (isChecked) {
             localStorage.setItem("token", JSON.stringify({ jwt: data.jwt, userName: inputValues.userName })); // we store the token in local storage
@@ -49,10 +50,7 @@ const Login = () => {
         console.log(err)
       });
 
-
-
   }
-
 
   return (
     <>
