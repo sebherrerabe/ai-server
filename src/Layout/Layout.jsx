@@ -26,7 +26,6 @@ const Layout = ({ whatIs }) => {
         setThemeColors({ ...darkOrLight })
     }
 
-
     return (
         <ThemeContext.Provider value={themeColors}>
 

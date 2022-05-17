@@ -3,6 +3,8 @@ import { ThemeContext } from "../../../../Layout/Layout";
 
 import lightLoading from "../../assets/loading/light-loading.svg";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRotate } from '@fortawesome/free-solid-svg-icons'
 
 import { LogInContext } from "../../../../AppRoutes";
 
@@ -25,7 +27,6 @@ const Trainings = () => {
 
   const getTrainings = useCallback(async () => {
     let slowDown = 0;
-
     try {
       let response = await fetch(`http://api.ai-server.becode.org/get_all_training_queue`, {
         method: "GET",
@@ -97,27 +98,28 @@ const Trainings = () => {
         <div className="component-container">
           <div className={"training-number  " + themeColors.textTertiaryColor}>You have {training.length} {training.length === 1 ? "training" : "trainings"} in queue</div>
 
-      <div className="training-table">
-        {training.queue !== 0 ? 
-        <table>
-          <thead>
-            <tr>
-              <th className={"container-details  " + themeColors.textTertiaryColor}>Container details</th>
-              <th className={"status  " + themeColors.textTertiaryColor}>Status</th>
-              <th className={"artifacts  " + themeColors.textTertiaryColor}>Artifacts</th>
-              <th className={"finish-date  " + themeColors.textTertiaryColor}>Finish date</th>
-            </tr>
-          
-          </thead>
-          <tbody>
-            {training.map((item, index) => <Row key ={index} containerId={item.containerDetails} status={item.status} artifactsUrl={item.artifactsUrl} finishDate={item.finishDate} />)}
-          </tbody>
-        </table>
-         : null}
-      </div>
-          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className={"refreshing-msg " + themeColors.textTertiaryColor} > It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>}
+          <div className="training-table">
+            {training.queue !== 0 ?
+              <table>
+                <thead>
+                  <tr>
+                    <th className={"container-details  " + themeColors.textTertiaryColor}>Container details</th>
+                    <th className={"status  " + themeColors.textTertiaryColor}>Status</th>
+                    <th className={"artifacts  " + themeColors.textTertiaryColor}>Artifacts</th>
+                    <th className={"finish-date  " + themeColors.textTertiaryColor}>Finish date</th>
+                  </tr>
+
+                </thead>
+                <tbody>
+                  {training.map((item, index) => <Row key={index} containerDetails={item.containerDetails} status={item.status} artifacts={item.artifacts} finishDate={item.finishDate} />)}
+                </tbody>
+              </table>
+              : null}
+          </div>
+          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className={"refreshing-msg " + themeColors.textTertiaryColor} > <div className="icon" onClick={() => {console.log('something')}}> < FontAwesomeIcon icon={faRotate}  /> </div> It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>}
+
         </div>
-        : <img src={lightLoading} alt="wait to load" />}
+        : <img src={lightLoading} alt="wait to load" datacount={count} />}
     </>
 
   );
