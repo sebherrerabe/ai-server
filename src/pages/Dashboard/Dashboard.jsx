@@ -63,7 +63,6 @@ const Dashboard = () => {
         <TabsBar themeColors={themeColors} setIsActive={setIsActive} isActive={isActive} />
       </div>
       <div className="middle-container">
-      <div className="display-profpic" style={{ backgroundImage: `url(${arrow})` }}></div>
       </div>
       <div className="right-container flex">
         <div className="right-container-top">
