@@ -3,6 +3,7 @@ import lightLoading from "../../assets/loading/light-loading.svg";
 import { ThemeContext } from "../../../../Layout/Layout";
 
 import Row from "./components/Row";
+import "./Queue.css"
 
 
 import { LogInContext } from "../../../../AppRoutes";
