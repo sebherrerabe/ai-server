@@ -35,7 +35,6 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.details) {
-          console.log(data.details) // this is the error message
           //We should probably display it somewhere
         } else {
           if (isChecked) {
