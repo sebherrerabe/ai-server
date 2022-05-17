@@ -110,7 +110,7 @@ const Trainings = () => {
           
           </thead>
           <tbody>
-            {training.map((item, index) => <Row key ={index} containerDetails={item.containerDetails} status={item.status} artifacts={item.artifacts} finishDate={item.finishDate}/>)}
+            {training.map((item, index) => <Row key ={index} containerId={item.containerDetails} status={item.status} artifactsUrl={item.artifactsUrl} finishDate={item.finishDate} />)}
           </tbody>
         </table>
          : null}

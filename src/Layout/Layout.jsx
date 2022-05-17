@@ -29,7 +29,6 @@ const Layout = ({ whatIs }) => {
     })
 
     useEffect(() => {
-        console.log(themeColors)
     }, [themeColors])
 
     const switchMode = () => {
