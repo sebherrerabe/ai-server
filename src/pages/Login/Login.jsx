@@ -20,7 +20,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
+    
     fetch("http://api.ai-server.becode.org/api/auth", {
       method: "POST",
       headers: {
@@ -48,10 +48,7 @@ const Login = () => {
         console.log(err)
       });
 
-
-
   }
-
 
   return (
     <>

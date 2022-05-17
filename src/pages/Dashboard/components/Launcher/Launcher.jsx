@@ -89,8 +89,6 @@ const Launcher = () => {
         message !== "" && setDisplayMessage(true)
     }, [message])
 
-    // className={"launcher-input  " + themeColors.colorQuartenary} // old
-
     return (
         <>
             {canDisplay ? <div className="component-container">
@@ -100,13 +98,13 @@ const Launcher = () => {
                         <label htmlFor="img-slug "
                             className={"mg-bt-5  " + themeColors.textTertiaryColor} ><FontAwesomeIcon icon={faDocker} />Image Slug </label>
 
-                        <input name="img-slug" value={inputValues.imgSlug} className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="DockerHub_username/image_name" onChange={(e) => setInputValues({ ...inputValues, imgSlug: e.target.value })} />
+                        <input name="img-slug" value={inputValues.imgSlug} className={"launcher-input  " + themeColors.colorQuaternary + " " + themeColors.textPrimaryColor}  type="text" placeholder="DockerHub_username/image_name" onChange={(e) => setInputValues({ ...inputValues, imgSlug: e.target.value })} />
 
                         <label htmlFor="output"
                             className={"mg-bt-5 " + themeColors.textTertiaryColor + themeColors.textPrimaryColor} ><FontAwesomeIcon icon={faFolderTree} />Volume</label>
 
 
-                        <input name="output" value={inputValues.output} className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="/output" onChange={(e) => setInputValues({ ...inputValues, output: e.target.value })} />
+                        <input name="output" value={inputValues.output} className={"launcher-input  " + themeColors.colorQuaternary + " " + themeColors.textPrimaryColor} type="text" placeholder="/output" onChange={(e) => setInputValues({ ...inputValues, output: e.target.value })} />
 
                         <br />
                         <div className="display-btn">
