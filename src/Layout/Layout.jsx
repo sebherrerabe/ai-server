@@ -5,7 +5,7 @@ import Login from "../pages/Login/Login";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import './Layout.css';
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 import cssClasses from "./cssClasses.json"
 
@@ -17,33 +17,13 @@ const Layout = ({ whatIs }) => {
     const dark = cssClasses.dark;
 
     const [themeMode, setThemeMode] = useState(false);
-    const [themeColors, setThemeColors] = useState({
-        colorPrimary: dark.colorPrimary,
-        colorSecondary: dark.colorSecondary,
-        colorTertiary: dark.colorTertiary,
-        bgColor: dark.bgColor,
-        textPrimaryColor: dark.textPrimaryColor,
-        textSecondaryColor: dark.textSecondaryColor,
-        textTertiaryColor: dark.textTertiaryColor,
-        textQuaternaryColor: dark.textQuaternaryColor
-    })
+    const [themeColors, setThemeColors] = useState({ ...dark })
 
-    useEffect(() => {
-    }, [themeColors])
 
     const switchMode = () => {
         setThemeMode(!themeMode);
-        setThemeColors(prevColors => {
-            prevColors.colorPrimary = !themeMode ? light.colorPrimary : dark.colorPrimary;
-            prevColors.colorSecondary = !themeMode ? light.colorSecondary : dark.colorSecondary;
-            prevColors.colorTertiary = !themeMode ? light.colorTertiary : dark.colorTertiary;
-            prevColors.bgColor = !themeMode ? light.bgColor : dark.bgColor;
-            prevColors.textPrimaryColor = !themeMode ? light.textPrimaryColor : dark.textPrimaryColor;
-            prevColors.textSecondaryColor = !themeMode ? light.textSecondaryColor : dark.textSecondaryColor;
-            prevColors.textTertiaryColor = !themeMode ? light.textTertiaryColor : dark.textTertiaryColor;
-            prevColors.textQuaternaryColor = !themeMode ? light.textQuaternaryColor : dark.textQuaternaryColor;
-            return prevColors;
-        })
+        const darkOrLight = themeMode ? light : dark;
+        setThemeColors({ ...darkOrLight })
     }
 
 

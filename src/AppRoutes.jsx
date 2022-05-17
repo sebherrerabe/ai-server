@@ -5,9 +5,9 @@ import { BrowserRouter } from 'react-router-dom';
 import Layout from "./Layout/Layout";
 
 
-import Launcher from "./pages/Dashboard/components/Launcher/Launcher";
 import Queue from "./pages/Dashboard/components/Queue/Queue";
 import Trainings from "./pages/Dashboard/components/Past Trainings/Trainings";
+import Launcher from "./pages/Dashboard/components/Launcher/Launcher";
 
 export const LogInContext = createContext()
 

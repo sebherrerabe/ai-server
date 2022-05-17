@@ -20,6 +20,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    
     fetch("http://api.ai-server.becode.org/api/auth", {
       method: "POST",
       headers: {
@@ -45,8 +46,8 @@ const Login = () => {
       .catch((err) => {
         console.log(err)
       });
-  }
 
+  }
 
   return (
     <>
@@ -81,7 +82,7 @@ const Login = () => {
                   </div>
                   <div className="login-form-bottom-right">
 
-                    <button className={"login-btn "  + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}> <span> Sign In </span></button>
+                    <button className={"login-btn " + themeColors.colorSecondary + " " + themeColors.textSecondaryColor}> <span> Sign In </span></button>
                   </div>
                 </div>
               </form>

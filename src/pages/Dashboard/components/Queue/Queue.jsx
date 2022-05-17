@@ -3,6 +3,7 @@ import lightLoading from "../../assets/loading/light-loading.svg";
 import { ThemeContext } from "../../../../Layout/Layout";
 
 import Row from "./components/Row";
+import "./Queue.css"
 
 
 import { LogInContext } from "../../../../AppRoutes";
@@ -95,7 +96,7 @@ const Queue = () => {
           <div className={"training-number  " + themeColors.textTertiaryColor}>You have {queue.length} {queue.length === 1 ? "training" : "trainings"} in queue</div>
           <div className="training-table">
             {queue.length !== 0 ?
-              <table>
+              <table id="queue">
                 <thead>
                   <tr className={themeColors.textTertiaryColor}>
                     <th>Position</th>
@@ -109,7 +110,16 @@ const Queue = () => {
               </table>
               : null}
           </div>
-          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className="refreshing-msg">It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>}
+
+          {/* {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> : <div className={"refreshing-msg " + themeColors.textTertiaryColor} >It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</div>} */}
+
+          {loadingQueue ? <img className="loading-queue" src={lightLoading} alt="loading" /> :
+              <div className={"refreshing-msg " + themeColors.textTertiaryColor} >
+            <p>It will be refreshed in {seconds} {seconds === 1 ? "second." : "seconds."}</p>
+            
+              </div>}
+
+
         </div>
         : <img src={lightLoading} alt="wait to load" />}
     </>
@@ -117,3 +127,5 @@ const Queue = () => {
 };
 
 export default Queue;
+
+
