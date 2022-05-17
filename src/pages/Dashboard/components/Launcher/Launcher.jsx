@@ -15,6 +15,7 @@ import { faDocker } from '@fortawesome/free-brands-svg-icons'
 const Launcher = () => {
     const themeColors = useContext(ThemeContext);
 
+
     const [count, setCount] = useState(0);
     const [canDisplay, setCanDisplay] = useState(false);
 
@@ -79,9 +80,6 @@ const Launcher = () => {
 
     }
 
-    useEffect(() => {
-        console.log(showLoading)
-    }, [showLoading])
 
 
     const [displayMessage, setDisplayMessage] = useState(false);
@@ -107,6 +105,7 @@ const Launcher = () => {
 
                         <label htmlFor="output" 
                         className={"mg-bt-5 " + themeColors.textTertiaryColor  + themeColors.textPrimaryColor} ><FontAwesomeIcon icon={faFolderTree} />Volume</label>
+
 
                         <input name="output" value={inputValues.output} className={"launcher-input  " + themeColors.colorQuartenary} type="text" placeholder="/output" onChange={(e) => setInputValues({ ...inputValues, output: e.target.value })} />
 

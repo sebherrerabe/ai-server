@@ -4,7 +4,6 @@ import { ThemeContext } from "../../../../Layout/Layout";
 
 import Row from "./components/Row";
 
-import "./Queue.css";
 
 import { LogInContext } from "../../../../AppRoutes";
 
@@ -22,7 +21,7 @@ const Queue = () => {
 
   const [queue, setQueue] = useState([]); // this is the state to store the queue
 
-   // this is the state to slow down the loading animation
+  // this is the state to slow down the loading animation
 
 
 
@@ -42,9 +41,6 @@ const Queue = () => {
       }
       )
       let data = await response.json();
-      console.log(data);
-
-
       setQueue(data.data);
       setCanDisplay(true);
       let newInterval = setInterval(() => {
@@ -60,7 +56,7 @@ const Queue = () => {
       console.error(err);
       // Handle errors here
     }
-  },[userSession.jwt, setQueue, setCanDisplay, setLoadingQueue]);
+  }, [userSession.jwt, setQueue, setCanDisplay, setLoadingQueue]);
 
 
 
@@ -77,7 +73,6 @@ const Queue = () => {
     let newInterval = setInterval(() => {
       setSeconds(prevSeconds => {
         if (prevSeconds === 1) {
-
           clearInterval(newInterval)
           return 30
         } else {

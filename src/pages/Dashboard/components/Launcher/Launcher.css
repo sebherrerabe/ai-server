@@ -1,29 +1,40 @@
-
 .display-input {
-    width: 80%;
-    height: 100%;
+  width: 80%;
+  height: 100%;
 }
 .launcher-form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.launcher-form label {
+  display: flex;
+}
+.launcher-form .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .launcher-input {
-    height: 50px;
-    width: 100%;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-    padding-left: 20px;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  padding-left: 20px;
 }
 
 .mg-bt-5 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .display-btn {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .queue-btn {

@@ -5,7 +5,7 @@ import Login from "../pages/Login/Login";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import './Layout.css';
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 import cssClasses from "./cssClasses.json"
 
@@ -24,8 +24,13 @@ const Layout = ({ whatIs }) => {
         bgColor: dark.bgColor,
         textPrimaryColor: dark.textPrimaryColor,
         textSecondaryColor: dark.textSecondaryColor,
-        textTertiaryColor: dark.textTertiaryColor
+        textTertiaryColor: dark.textTertiaryColor,
+        textQuaternaryColor: dark.textQuaternaryColor
     })
+
+    useEffect(() => {
+        console.log(themeColors)
+    }, [themeColors])
 
     const switchMode = () => {
         setThemeMode(!themeMode);
@@ -37,6 +42,7 @@ const Layout = ({ whatIs }) => {
             prevColors.textPrimaryColor = !themeMode ? light.textPrimaryColor : dark.textPrimaryColor;
             prevColors.textSecondaryColor = !themeMode ? light.textSecondaryColor : dark.textSecondaryColor;
             prevColors.textTertiaryColor = !themeMode ? light.textTertiaryColor : dark.textTertiaryColor;
+            prevColors.textQuaternaryColor = !themeMode ? light.textQuaternaryColor : dark.textQuaternaryColor;
             return prevColors;
         })
     }
