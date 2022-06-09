@@ -6,7 +6,7 @@ Ai-Server is web app made for BeCode's AI learners to launch AI model training i
 
 # What the learners can do
  
- **Learners connect
+ ** Connect
  ** Send trainings to queue
  ** See the status of each training past or still running.
 
