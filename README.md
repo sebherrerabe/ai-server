@@ -1,2 +1,14 @@
 # ai-server
-BeCode's Ai server UI for learners
+
+
+Ai-Server is web app made for BeCode's AI learners to launch AI model training in Docker container.
+
+
+# What the learners can do
+ 
+ **Learners connect
+ ** Send trainings to queue
+ ** See the status of each training past or still running.
+
+ 
+ 
